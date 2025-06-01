@@ -3,40 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KEM CHO SATUDIYA</title>
+  <title>Admin Login</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="dashboard">
-    <h1>KEM CHO SATTUDIYAV🪽</h1>
-    <div class="slots-container">
-      <!-- 8 Slots -->
-      <div class="slot-card"><span>Slot 1</span><h2>Empty Slot</h2></div>
-      <div class="slot-card"><span>Slot 2</span><h2>Empty Slot</h2></div>
-      <div class="slot-card"><span>Slot 3</span><h2>Empty Slot</h2></div>
-      <div class="slot-card"><span>Slot 4</span><h2>Empty Slot</h2></div>
-      <div class="slot-card"><span>Slot 5</span><h2>Empty Slot</h2></div>
-      <div class="slot-card"><span>Slot 6</span><h2>Empty Slot</h2></div>
-      <div class="slot-card"><span>Slot 7</span><h2>Empty Slot</h2></div>
-      <div class="slot-card"><span>Slot 8</span><h2>Empty Slot</h2></div>
-    </div>
-  </div>
-  <!-- Ball Icon Button -->
-<div class="ball-icon" onclick="openLogin()">
-  🏏
-</div>
-<!-- Login Popup -->
-<div id="loginModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeLogin()">&times;</span>
+  <div class="login-container">
     <h2>Login</h2>
     <input type="text" id="username" placeholder="Username" />
     <input type="password" id="password" placeholder="Password" />
     <button onclick="checkLogin()">Login</button>
     <p id="loginMsg"></p>
   </div>
-</div>
+  <script>
+    function checkLogin() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
 
-<script src="app.js"></script>
+      if (user === "RAVII" && pass === "3212") {
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById("loginMsg").innerText = "Invalid credentials!";
+      }
+    }
+  </script>
 </body>
 </html>
