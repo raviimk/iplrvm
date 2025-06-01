@@ -1,4 +1,4 @@
-
+// Part 1: Existing Match Details Logic
 document.addEventListener("DOMContentLoaded", () => {
   const matchDetails = document.getElementById("match-details");
   const friendCodes = document.getElementById("friend-codes");
@@ -10,3 +10,30 @@ document.addEventListener("DOMContentLoaded", () => {
   matchDetails.innerHTML = `<h2>${sampleMatch}</h2>`;
   friendCodes.innerHTML = "<ul>" + sampleFriends.map((f, i) => `<li>${f} → ${codes[i]}</li>`).join("") + "</ul>";
 });
+
+// Part 2: Login Modal Logic
+function openLogin() {
+  document.getElementById('loginModal').style.display = 'flex';
+}
+
+function closeLogin() {
+  document.getElementById('loginModal').style.display = 'none';
+}
+
+function checkLogin() {
+  const user = document.getElementById('username').value.trim();
+  const pass = document.getElementById('password').value.trim();
+  const msg = document.getElementById('loginMsg');
+
+  if (user === 'RAVII' && pass === '3212') {
+    msg.style.color = 'green';
+    msg.innerText = 'Login successful!';
+    setTimeout(() => {
+      closeLogin();
+      alert('Welcome, RAVII!');
+    }, 1000);
+  } else {
+    msg.style.color = 'red';
+    msg.innerText = 'Invalid username or password';
+  }
+}
