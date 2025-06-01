@@ -21,5 +21,22 @@
       <div class="slot-card"><span>Slot 8</span><h2>Empty Slot</h2></div>
     </div>
   </div>
+  <!-- Ball Icon Button -->
+<div class="ball-icon" onclick="openLogin()">
+  🏏
+</div>
+<!-- Login Popup -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeLogin()">&times;</span>
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="checkLogin()">Login</button>
+    <p id="loginMsg"></p>
+  </div>
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>
