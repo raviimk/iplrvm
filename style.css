@@ -1,14 +1,53 @@
-
 body {
-  background-color: #121212;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #6a11cb, #2575fc);
   color: white;
-  font-family: sans-serif;
-  text-align: center;
-  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
 }
-#app {
-  border: 2px solid #444;
-  padding: 1.5rem;
-  border-radius: 10px;
-  background-color: #1e1e1e;
+
+.dashboard {
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.slots-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.slot-card {
+  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  transition: transform 0.2s;
+}
+
+.slot-card:hover {
+  transform: scale(1.02);
+}
+
+.slot-card span {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.slot-card h2 {
+  margin: 5px 0 0;
+  font-size: 18px;
+  font-weight: bold;
 }
