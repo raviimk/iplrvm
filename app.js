@@ -25,15 +25,13 @@ function checkLogin() {
   const pass = document.getElementById('password').value.trim();
   const msg = document.getElementById('loginMsg');
 
-  if (user === 'RAVII' && pass === '3212') {
-    msg.style.color = 'green';
-    msg.innerText = 'Login successful!';
-    setTimeout(() => {
-      closeLogin();
-      alert('Welcome, RAVII!');
-    }, 1000);
+  function checkLogin() {
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  if (username === "RAVII" && password === "3212") {
+    window.location.href = "dashboard.html";
   } else {
-    msg.style.color = 'red';
-    msg.innerText = 'Invalid username or password';
+    alert("Galat username ya password!");
   }
 }
