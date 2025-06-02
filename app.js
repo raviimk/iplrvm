@@ -37,9 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (user === 'RAVII' && pass === '3212') {
       msg.style.color = 'green';
       msg.innerText = 'Login successful!';
-      setTimeout(() => {
-         // ✅ Redirect after 1 second
-      window.location.href = "dashboard.html";
+      setTimeout(() => {  
+    window.location.href = "./dashboard.html";
     }, 1000);
   } else {
     msg.style.color = 'red';
