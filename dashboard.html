@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Team Assignment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Team Assign</h2>
+    <input type="text" id="team1" placeholder="Enter Team 1 Name" />
+    <input type="text" id="team2" placeholder="Enter Team 2 Name" />
+    
+    <div id="friends">
+      <h3>Enter 8 Friend Names</h3>
+      <input type="text" placeholder="Friend 1" />
+      <input type="text" placeholder="Friend 2" />
+      <input type="text" placeholder="Friend 3" />
+      <input type="text" placeholder="Friend 4" />
+      <input type="text" placeholder="Friend 5" />
+      <input type="text" placeholder="Friend 6" />
+      <input type="text" placeholder="Friend 7" />
+      <input type="text" placeholder="Friend 8" />
+    </div>
+
+    <button onclick="assignTeams()">Chitthi</button>
+  </div>
+
+  <div id="resultPopup" class="popup">
+    <div class="popup-content">
+      <span onclick="this.parentElement.parentElement.style.display='none'" style="float:right;cursor:pointer;">❌</span>
+      <h3>Assigned Codes:</h3>
+      <div id="resultContent"></div>
+    </div>
+  </div>
+
+  <div id="liveSlots" class="live-box"></div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
