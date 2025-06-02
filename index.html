@@ -1,42 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KEM CHO SATUDIYA</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="dashboard">
-    <h1>KEM CHO SATTUDIYAV🪽</h1>
-    <div class="slots-container">
-      <!-- 8 Slots -->
-      <div class="slot-card"><span>Slot 1</span><h2>Empty Slot</h2></div>
-      <div class="slot-card"><span>Slot 2</span><h2>Empty Slot</h2></div>
-      <div class="slot-card"><span>Slot 3</span><h2>Empty Slot</h2></div>
-      <div class="slot-card"><span>Slot 4</span><h2>Empty Slot</h2></div>
-      <div class="slot-card"><span>Slot 5</span><h2>Empty Slot</h2></div>
-      <div class="slot-card"><span>Slot 6</span><h2>Empty Slot</h2></div>
-      <div class="slot-card"><span>Slot 7</span><h2>Empty Slot</h2></div>
-      <div class="slot-card"><span>Slot 8</span><h2>Empty Slot</h2></div>
-    </div>
-  </div>
-  <!-- Ball Icon Button -->
-<div class="ball-icon" onclick="openLogin()">
-  🏏
-</div>
-<!-- Login Popup -->
-<div id="loginModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeLogin()">&times;</span>
-    <h2>Login</h2>
-    <input type="text" id="username" placeholder="Username" />
-    <input type="password" id="password" placeholder="Password" />
-    <button onclick="checkLogin()">Login</button>
-    <p id="loginMsg"></p>
-  </div>
-</div>
+// Part 1: Existing Match Details Logic
+document.addEventListener("DOMContentLoaded", () => {
+  const matchDetails = document.getElementById("match-details");
+  const friendCodes = document.getElementById("friend-codes");
 
-<script src="app.js" defer></script>
-</body>
-</html>
+  const sampleMatch = "CSK vs MI";
+  const sampleFriends = ["Ravi", "Aman", "Jay", "Kunal", "Tushar", "Neel", "Ankit", "Manav"];
+  const codes = ["C1", "C2", "C3", "C4", "M1", "M2", "M3", "M4"];
+
+  if (matchDetails && friendCodes) {
+    matchDetails.innerHTML = `<h2>${sampleMatch}</h2>`;
+    friendCodes.innerHTML = "<ul>" + sampleFriends.map((f, i) => `<li>${f} → ${codes[i]}</li>`).join("") + "</ul>";
+  }
+
+  // ✅ Login Functions
+  window.openLogin = function () {
+    document.getElementById('loginModal').style.display = 'flex';
+  };
+
+  window.closeLogin = function () {
+    document.getElementById('loginModal').style.display = 'none';
+  };
+
+  window.checkLogin = function () {
+    const user = document.getElementById('username').value.trim();
+    const pass = document.getElementById('password').value.trim();
+    const msg = document.getElementById('loginMsg');
+
+    if (user === 'RAVII' && pass === '3212') {
+      msg.style.color = 'green';
+      msg.innerText = 'Login successful!';
+      setTimeout(() => {
+        closeLogin();
+        alert('Welcome, RAVII!');
+      }, 1000);
+    } else {
+      msg.style.color = 'red';
+      msg.innerText = 'Invalid username or password';
+    }
+  };
+});
