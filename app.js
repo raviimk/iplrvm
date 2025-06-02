@@ -38,12 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
       msg.style.color = 'green';
       msg.innerText = 'Login successful!';
       setTimeout(() => {
-        closeLogin();
-        alert('Welcome, RAVII!');
-      }, 1000);
-    } else {
-      msg.style.color = 'red';
-      msg.innerText = 'REVA DENE MOTA KAM NYY TARU 😁';
-    }
-  };
-});
+         // ✅ Redirect after 1 second
+      window.location.href = "dashboard.html";
+    }, 1000);
+  } else {
+    msg.style.color = 'red';
+    msg.innerText = 'REVA DENE MOTA KAM NYY TARU 😁';
+  }
+};
