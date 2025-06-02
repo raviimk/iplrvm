@@ -26,13 +26,13 @@ function checkLogin() {
   const msg = document.getElementById('loginMsg');
 
   function checkLogin() {
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+  const user = document.getElementById('username').value.trim();
+  const pass = document.getElementById('password').value.trim();
+  const msg = document.getElementById('loginMsg');
 
- if (user === 'RAVII' && pass === '3212') {
+  if (user === 'RAVII' && pass === '3212') {
     msg.style.color = 'green';
     msg.innerText = 'Login successful!';
-    window.location.href = "dashboard.html";
     setTimeout(() => {
       closeLogin();
       alert('Welcome, RAVII!');
@@ -42,3 +42,4 @@ function checkLogin() {
     msg.innerText = 'Invalid username or password';
   }
 }
+
