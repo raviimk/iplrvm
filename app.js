@@ -45,3 +45,4 @@ document.addEventListener("DOMContentLoaded", () => {
     msg.innerText = 'REVA DENE MOTA KAM NYY TARU 😁';
   }
 };
+});
